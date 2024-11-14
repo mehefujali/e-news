@@ -1,13 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import NewsCard from "../NewsCard/NewsCard";
 
+
 const News = () => {
       const newsData = useLoaderData()
-      console.log(newsData);
-
+     
+     
+    
       return (
             <div>
-                  <div>
+                  <h1 className=" text-lg font-bold mb-4">News</h1>
+                  <div className=" flex flex-col gap-7">
                       {
                         newsData.data.map(news=> <NewsCard key={news._id} news={news}></NewsCard> )
                       }
