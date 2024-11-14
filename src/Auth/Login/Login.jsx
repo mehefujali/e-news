@@ -8,11 +8,15 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 
 const Login = () => { 
-      const {googleLogIn} = useContext(AuthContext)
+      const {googleLogIn,setUser} = useContext(AuthContext)
       const handleGoogleLogin = () => {
             googleLogIn()
             .then(res=>{
-                  console.log(res);
+                  setUser(res.user);
+                  
+            })
+            .catch(err=> {
+                  console.log(err);
                   
             })
       }

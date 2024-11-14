@@ -1,10 +1,23 @@
 import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Nav from "../../Components/Nav/Nav";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 
 const Register = () => {
-      
+      const {googleLogIn,setUser} = useContext(AuthContext)
+      const handleGoogleLogin = () => {
+            googleLogIn()
+            .then(res=>{
+                  setUser(res.user);
+                  
+            })
+            .catch(err => {
+                  console.log(err);
+                  
+            })
+      }
       return (
             <div className="bg-blue-100" >
             <Nav></Nav>
@@ -34,7 +47,7 @@ const Register = () => {
                        <p className=" text-sm mt-3">Already have An Account ? <Link className=" text-blue-600 font-semibold" to={'/login'}>Login</Link></p>
                        <div className=" divider">OR</div>
                        <div className=" flex gap-3 text-3xl items-center justify-center">
-                             <FaGoogle  className=" text-red-600 cursor-pointer"></FaGoogle>
+                             <FaGoogle onClick={handleGoogleLogin}  className=" text-red-600 cursor-pointer"></FaGoogle>
                              <FaFacebook className=" text-blue-600 cursor-pointer"></FaFacebook>
                              <FaTwitter className=" text-blue-400 cursor-pointer"></FaTwitter>
                        </div>
