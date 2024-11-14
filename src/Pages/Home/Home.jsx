@@ -13,14 +13,14 @@ const Home = () => {
                   <LatestNews></LatestNews>
                   <Nav></Nav>
                   <main className=" container mx-auto mt-12">
-                        <div className=" grid grid-cols-12 gap-8 ">
-                              <div className=" col-span-2">
+                        <div className=" grid lg:grid-cols-12 gap-8 ">
+                              <div className=" lg:col-span-3 xl:col-span-2">
                                     <AsideLeft></AsideLeft>
                               </div>
-                              <div className=" col-span-7">
+                              <div className=" lg:col-span-6 xl:col-span-7">
                                     <Outlet></Outlet>
                               </div>
-                              <div className=" col-span-3">
+                              <div className=" lg:col-span-3">
                                     <AsideRight></AsideRight>
                               </div>
                         </div>

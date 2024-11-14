@@ -12,13 +12,13 @@ const NewsCategory = () => {
      
       
       return (
-            <div>
-                  <h2 className=" text-xl font-bold">All category</h2>
-                  <div  className=" flex  flex-col-reverse mt-5 gap-2" id="newsCategories">
+            <div className="p-3 md:p-0">
+                  <h2 className=" text-xl font-bold ">All category</h2>
+                  <div  className=" flex  flex-wrap  lg:flex-col-reverse mt-5 gap-2" id="newsCategories">
                         {
                               categories.map(category => <NavLink
                                     to={`/home/category/${category.category_id}`}
-                                    className="btn bg-blue-100"                                   
+                                    className="btn btn-xs lg:btn-md bg-blue-100"                                   
                         key={category.category_id}>{category.category_name}</NavLink>)
                         }
                   </div>

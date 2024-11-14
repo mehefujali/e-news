@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const NewsCard = ({ news }) => {
-      console.log(news);
+      
 
       const {
             author,
@@ -20,7 +20,7 @@ const NewsCard = ({ news }) => {
             title,
             total_view,
       } = news;
-      console.log(rating);
+     
 
       return (
             <div>
