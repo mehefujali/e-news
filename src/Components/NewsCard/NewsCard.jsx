@@ -10,13 +10,13 @@ const NewsCard = ({ news }) => {
 
       const {
             author,
-            category_id,
+
             details,
             image_url,
-            others_info,
-            published_date,
+
+
             rating,
-            thumbnail_url,
+
             title,
             total_view,
       } = news;
@@ -30,12 +30,12 @@ const NewsCard = ({ news }) => {
                                     <img className=" w-12 h-12 rounded-full" src={author.img} alt="" />
                                     <div>
                                           <h4 className=" font-semibold">{author.name}</h4>
-                                          <p>{author.published_date}</p>
+                                          <p className=" text-gray-500">{author.published_date}</p>
                                     </div>
                               </div>
                               <div className=" text-2xl flex items-center gap-3 text-blue-600">
-                                    <FaRegBookmark></FaRegBookmark>
-                                    <CiShare2 className=" font-bold"></CiShare2>
+                                    <FaRegBookmark className=" cursor-pointer"></FaRegBookmark>
+                                    <CiShare2 className=" font-bold cursor-pointer"></CiShare2>
                               </div>
                         </div>
                         <div className=" mt-4 flex flex-col gap-2 p-4">
@@ -57,7 +57,7 @@ const NewsCard = ({ news }) => {
                                     />
                                     <p className=" text-lg font-bold">{rating.number}</p>
                               </div>
-                              
+
                               <div className=" flex items-center gap-2 text-gray-500">
                                     <FaEye className=" text-2xl "></FaEye>
                                     <p>{total_view}</p>

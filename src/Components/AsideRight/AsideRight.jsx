@@ -1,9 +1,10 @@
+import SocalLogin from "../../Auth/SocalLogin/SocalLogin";
 
 
 const AsideRight = () => {
       return (
             <div>
-                   Aside right
+               <SocalLogin></SocalLogin>     
             </div>
       );
 };
