@@ -7,7 +7,7 @@ const Nav = () => {
       return (
             <div className=" container mx-auto mt-5">
                   <div className=" flex justify-between items-center">
-                        <div>
+                        <div className=" md:w-32">
 
                         </div>
                         <ul id="navLinks" className=" gap-6 flex items-center text-gray-500">
