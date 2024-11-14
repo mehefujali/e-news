@@ -13,7 +13,7 @@ const NewsCard = ({ news }) => {
 
             details,
             image_url,
-
+            _id,
 
             rating,
 
@@ -42,7 +42,7 @@ const NewsCard = ({ news }) => {
                               <h1 className=" text-2xl font-bold">{title}</h1>
                               <img className=" w-full   object-contain" src={image_url} alt="" />
                               <p className=" max-h-36 text-gray-500  truncate whitespace-normal " >{details}..</p>
-                              <Link className=" text-blue-600 font-bold">...Read more</Link>
+                              <Link to={`/newsdetails/${_id}`} className=" text-blue-600 font-bold">...Read more</Link>
                         </div>
                         <div className=" divider p-4">
 

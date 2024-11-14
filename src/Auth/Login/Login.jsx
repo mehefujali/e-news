@@ -8,7 +8,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 
 const Login = () => { 
-      const {googleLogIn,setUser} = useContext(AuthContext)
+      const {googleLogIn,setUser,siginInEmail} = useContext(AuthContext)
       const handleGoogleLogin = () => {
             googleLogIn()
             .then(res=>{
@@ -20,7 +20,20 @@ const Login = () => {
                   
             })
       }
-
+      const handleEmailLogin = (e) => {
+            e.preventDefault()
+            const form = e.target 
+            const email = form.email.value 
+            const password = form.password.value 
+            siginInEmail(email,password)
+            .then(res => {
+                  setUser(res.user)
+            })
+            .catch(err=>{
+                  console.log(err);
+                  
+            })
+      }
       
       return (
             <div className="bg-blue-100" >
@@ -29,16 +42,21 @@ const Login = () => {
                         <div className=" max-w-lg mx-auto p-10 bg-white rounded shadow-md">
                               <h1 className=" text-2xl md:text-4xl font-bold">Login your account</h1>
                               <div className=" divider"></div>
-                              <form action="" className=" w-full flex flex-col gap-3">
+                              <form onSubmit={handleEmailLogin} action="" className=" w-full flex flex-col gap-3">
                                     <label htmlFor="">
+                                          
                                           <p className=" font-semibold">Email address</p>
-                                          <input placeholder=" Enter your email address"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                          <input 
+                                          name="email"
+                                          placeholder=" Enter your email address"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
                                     <label htmlFor="">
                                           <p className=" font-semibold">Password</p>
-                                          <input placeholder=" Enter your Password"  type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                          <input 
+                                          name="password"
+                                          placeholder=" Enter your Password"  type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
-                                    <button className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Login</button>
+                                    <button  className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Login</button>
                               </form>
                               <p className=" text-sm mt-3">Dont’t Have An Account ? <Link className=" text-blue-600 font-semibold" to={'/register'}> Register</Link></p>
                               <div className=" divider">OR</div>
