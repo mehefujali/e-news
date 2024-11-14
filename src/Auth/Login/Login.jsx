@@ -14,6 +14,7 @@ const Login = () => {
       const navigate = useNavigate()
       
       const handleGoogleLogin = () => {
+            
             googleLogIn()
             .then(res=>{
                   setUser(res.user);

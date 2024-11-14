@@ -3,6 +3,7 @@ import Header from "../../Components/Header/Header";
 import AsideRight from "../../Components/AsideRight/AsideRight";
 import { FaArrowLeft } from "react-icons/fa6";
 import PrivetRoute from "../../Auth/Private/PrivetRoute";
+import Nav from "../../Components/Nav/Nav";
 
 
 const NewsDetails = () => {
@@ -26,6 +27,7 @@ const NewsDetails = () => {
                   <div className=" container mx-auto">
                         <ScrollRestoration></ScrollRestoration>
                         <Header></Header>
+                        <Nav></Nav>
                         <div className=" grid grid-cols-12 gap-7  ">
                               <div className=" col-span-9">
                                     <h1 className=" text-xl font-bold mt-8">E News</h1>

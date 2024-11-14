@@ -10,6 +10,7 @@ export const AuthContext = createContext()
 
 const AuthProvider = ({children}) => {
       const [user,setUser] = useState(null)
+      const [loading,setLoading] = useState(true)
       const googleProvider = new GoogleAuthProvider()
 
   const googleLogIn = () => {
@@ -25,6 +26,7 @@ const AuthProvider = ({children}) => {
   useEffect(()=>{
      const unSubscrbe = onAuthStateChanged(auth,(curentUser)=>{
             setUser(curentUser)
+            setLoading(false)
       })
       return ()=>{
             unSubscrbe()
@@ -43,6 +45,8 @@ const AuthProvider = ({children}) => {
       logOut,
       emailRegister,
       siginInEmail,
+      loading,
+      setLoading,
      }
 
       return (
