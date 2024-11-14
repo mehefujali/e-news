@@ -1,10 +1,14 @@
 import SocalLogin from "../../Auth/SocalLogin/SocalLogin";
+import FindUsSocal from "../FindUsSocal/FindUsSocal";
 
 
 const AsideRight = () => {
       return (
             <div>
-               <SocalLogin></SocalLogin>     
+               <SocalLogin></SocalLogin>  
+               <div className=" mt-8">
+               <FindUsSocal></FindUsSocal>   
+               </div>
             </div>
       );
 };
