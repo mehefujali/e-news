@@ -1,5 +1,6 @@
 import SocalLogin from "../../Auth/SocalLogin/SocalLogin";
 import FindUsSocal from "../FindUsSocal/FindUsSocal";
+import Qzone from "../Qzone/Qzone";
 
 
 const AsideRight = () => {
@@ -8,6 +9,9 @@ const AsideRight = () => {
                <SocalLogin></SocalLogin>  
                <div className=" mt-8">
                <FindUsSocal></FindUsSocal>   
+               </div>
+               <div className=" mt-8">
+                  <Qzone></Qzone>
                </div>
             </div>
       );
