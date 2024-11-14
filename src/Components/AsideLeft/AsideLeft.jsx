@@ -1,9 +1,10 @@
+import NewsCategory from "../NewsCategory/NewsCategory";
 
 
 const AsideLeft = () => {
       return (
             <div>
-                  Aside Left
+                  <NewsCategory></NewsCategory>
             </div>
       );
 };
