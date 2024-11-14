@@ -5,7 +5,7 @@ import Qzone from "../Qzone/Qzone";
 
 const AsideRight = () => {
       return (
-            <div>
+            <div className=" px-4 md:px-0">
                <SocalLogin></SocalLogin>  
                <div className=" mt-8">
                <FindUsSocal></FindUsSocal>   

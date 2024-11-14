@@ -8,7 +8,7 @@ const News = () => {
      
     
       return (
-            <div>
+            <div className=" mb-6 px-4 md:px-0">
                   <h1 className=" text-xl font-bold mb-4">News</h1>
                   <div className=" flex flex-col gap-7">
                       {
