@@ -6,7 +6,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 
 const Register = () => {
-      const {googleLogIn,setUser} = useContext(AuthContext)
+      const {googleLogIn,setUser,emailRegister} = useContext(AuthContext)
       const handleGoogleLogin = () => {
             googleLogIn()
             .then(res=>{
@@ -18,6 +18,20 @@ const Register = () => {
                   
             })
       }
+      const handleEmailRegister = (e) =>{
+            e.preventDefault()
+            const form = e.target
+            const email = form.email.value 
+            const password = form.password.value 
+            emailRegister(email,password)
+            .then(res=>{
+                  setUser(res.user)
+            })
+            .catch(err=>{
+                  console.log(err);
+                  
+            })
+      }
       return (
             <div className="bg-blue-100" >
             <Nav></Nav>
@@ -25,24 +39,33 @@ const Register = () => {
                  <div className=" max-w-lg mx-auto p-10 bg-white rounded shadow-md">
                        <h1 className=" text-2xl md:text-4xl font-bold">Register your account</h1>
                        <div className=" divider"></div>
-                       <form action="" className=" w-full flex flex-col gap-3">
+                       <form onSubmit={handleEmailRegister} className=" w-full flex flex-col gap-3">
                              <label htmlFor="">
                                    <p className=" font-semibold">Name</p>
-                                   <input placeholder=" Enter your name"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                   <input 
+                                   name="name"
+                                   placeholder=" Enter your name"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                              </label>
                              <label htmlFor="">
+
                                    <p className=" font-semibold">Photo url</p>
-                                   <input placeholder=" Enter your photo url"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                   <input 
+                                   name="photourl"
+                                   placeholder=" Enter your photo url"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                              </label>
                              <label htmlFor="">
                                    <p className=" font-semibold">Email address</p>
-                                   <input placeholder=" Enter your email address"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                   <input
+                                   name="email"
+                                   placeholder=" Enter your email address"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                              </label>
                              <label htmlFor="">
                                    <p className=" font-semibold">Password</p>
-                                   <input placeholder=" Enter your Password"  type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                   <input
+                                   name="password"
+                                   placeholder=" Enter your Password"  type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                              </label>
-                             <button className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Login</button>
+                             <button className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Create account</button>
                        </form>
                        <p className=" text-sm mt-3">Already have An Account ? <Link className=" text-blue-600 font-semibold" to={'/login'}>Login</Link></p>
                        <div className=" divider">OR</div>

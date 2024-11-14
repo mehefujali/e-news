@@ -25,13 +25,13 @@ const Nav = () => {
                         <div className=" h-fit w-fit">
                               {
                                     user && user.email ? <div className=" flex items-center gap-2">
-                                          <h1 className=" text-xl font-semibold">{user?.displayName}</h1>
+                                          <h1 className=" text-xl font-semibold">{user.displayName||"Anonymous"}</h1>
                                           <div className="dropdown dropdown-end">
                                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                                       <div className="w-10 rounded-full">
                                                             <img
-                                                                  alt="Tailwind CSS Navbar component"
-                                                                  src={user.photoURL} />
+                                                                  alt={user?.displayName}
+                                                                  src={user.photoURL||"https://cdn2.vectorstock.com/i/1000x1000/44/01/default-avatar-photo-placeholder-icon-grey-vector-38594401.jpg"} />
                                                       </div>
                                                 </div>
                                                 <ul
