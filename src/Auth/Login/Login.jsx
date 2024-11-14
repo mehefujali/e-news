@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import Nav from "../../Components/Nav/Nav";
 import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { useContext } from "react";
@@ -8,11 +8,16 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 
 const Login = () => { 
-      const {googleLogIn,setUser,siginInEmail} = useContext(AuthContext)
+      const {googleLogIn,setUser,siginInEmail,user} = useContext(AuthContext)
+      const location = useLocation()
+      console.log(location);
+      const navigate = useNavigate()
+      
       const handleGoogleLogin = () => {
             googleLogIn()
             .then(res=>{
                   setUser(res.user);
+                  navigate(location.state||'/home')
                   
             })
             .catch(err=> {
@@ -28,11 +33,17 @@ const Login = () => {
             siginInEmail(email,password)
             .then(res => {
                   setUser(res.user)
+                  navigate(location.state||'/home')
             })
             .catch(err=>{
                   console.log(err);
                   
             })
+      }
+      
+      
+      if(user){
+            return<Navigate to={location.state||'/home'}></Navigate>
       }
       
       return (
