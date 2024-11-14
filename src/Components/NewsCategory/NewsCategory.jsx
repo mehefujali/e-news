@@ -14,7 +14,7 @@ const NewsCategory = () => {
       return (
             <div>
                   <h2 className=" text-xl font-bold">All category</h2>
-                  <div  className=" flex  flex-col mt-5 gap-2" id="newsCategories">
+                  <div  className=" flex  flex-col-reverse mt-5 gap-2" id="newsCategories">
                         {
                               categories.map(category => <NavLink
                                     to={`/home/category/${category.category_id}`}

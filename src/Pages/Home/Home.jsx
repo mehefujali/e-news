@@ -1,7 +1,9 @@
+import { Outlet } from "react-router-dom";
+import AsideLeft from "../../Components/AsideLeft/AsideLeft";
 import Header from "../../Components/Header/Header";
-import HomeMainLayout from "../../Components/HomeMainLayout/HomeMainLayout";
 import LatestNews from "../../Components/LatestNews/LatestNews";
 import Nav from "../../Components/Nav/Nav";
+import AsideRight from "../../Components/AsideRight/AsideRight";
 
 
 const Home = () => {
@@ -10,9 +12,19 @@ const Home = () => {
                   <Header></Header>
                   <LatestNews></LatestNews>
                   <Nav></Nav>
-                  <div className=" container mx-auto mt-12">
-                        <HomeMainLayout></HomeMainLayout>
-                  </div>
+                  <main className=" container mx-auto mt-12">
+                        <div className=" grid grid-cols-12 gap-8 ">
+                              <div className=" col-span-2">
+                                    <AsideLeft></AsideLeft>
+                              </div>
+                              <div className=" col-span-7">
+                                    <Outlet></Outlet>
+                              </div>
+                              <div className=" col-span-3">
+                                    <AsideRight></AsideRight>
+                              </div>
+                        </div>
+                  </main>
             </div>
       );
 };
