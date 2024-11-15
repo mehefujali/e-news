@@ -7,6 +7,7 @@ import News from "../Components/News/News";
 import Login from "../Auth/Login/Login";
 import Register from "../Auth/Register/Register";
 import NewsDetails from "../Pages/NewsDetails/NewsDetails";
+import ResetPassword from "../Auth/ResetPassword/ResetPassword";
 const router = createBrowserRouter ([
       {
             path: '/',
@@ -52,6 +53,10 @@ const router = createBrowserRouter ([
                         path: 'newsdetails/:newsId',
                         loader: ({params})=>fetch(`https://openapi.programming-hero.com/api/news/${params.newsId}`),
                         element: <NewsDetails></NewsDetails>
+                  },
+                  {
+                        path:'updatepassword',
+                        element:<ResetPassword></ResetPassword>
                   }
             ]
       }

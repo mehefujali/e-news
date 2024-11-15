@@ -43,7 +43,7 @@ const Nav = () => {
                                                                   Profile
                                                             </a>
                                                       </li>
-                                                      <li><a><FaGear></FaGear> Settings</a></li>
+                                                      <li><Link to={'/updatepassword'}><FaGear></FaGear> Settings</Link></li>
                                                       <li onClick={logOut}><a>
                                                            <FaSignOutAlt></FaSignOutAlt> Logout </a></li>
                                                 </ul>

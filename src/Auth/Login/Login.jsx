@@ -3,6 +3,7 @@ import Nav from "../../Components/Nav/Nav";
 import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
+import { toast } from "react-toastify";
 
 
 
@@ -10,7 +11,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 const Login = () => { 
       const {googleLogIn,setUser,siginInEmail,user} = useContext(AuthContext)
       const location = useLocation()
-     
+   
       const navigate = useNavigate()
       
       const handleGoogleLogin = () => {
@@ -37,7 +38,11 @@ const Login = () => {
                   navigate(location.state||'/home')
             })
             .catch(err=>{
-                  console.log(err);
+                  console.log(err.message);
+                  if(err.message==='Firebase: Error (auth/invalid-credential).'){
+                        toast.error("Invalid Password")
+                  }
+
                   
             })
       }
@@ -68,6 +73,7 @@ const Login = () => {
                                           name="password"
                                           placeholder=" Enter your Password"  type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
+                                    <Link to={'/updatepassword'}>Forget password ?</Link>
                                     <button  className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Login</button>
                               </form>
                               <p className=" text-sm mt-3">Dont’t Have An Account ? <Link className=" text-blue-600 font-semibold" to={'/register'} state={location.state}> Register</Link></p>

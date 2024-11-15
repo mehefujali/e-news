@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updatePassword, updateProfile} from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
@@ -25,6 +25,9 @@ const AuthProvider = ({children}) => {
   }
   const updateUserProfile =(update)=>{ 
     return updateProfile(auth.currentUser,update)
+  }
+  const updateUserPass = (pass) => {
+    return updatePassword(auth.currentUser,pass)
   }
   useEffect(()=>{
      const unSubscrbe = onAuthStateChanged(auth,(curentUser)=>{
@@ -53,6 +56,7 @@ const AuthProvider = ({children}) => {
       loading,
       setLoading,
       updateUserProfile,
+      updateUserPass
      }
 
       return (
