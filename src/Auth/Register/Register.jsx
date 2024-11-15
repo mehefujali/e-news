@@ -1,14 +1,14 @@
 import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import Nav from "../../Components/Nav/Nav";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from 'react-toastify';
 
 
 const Register = () => {
       const location = useLocation()
-      const [error, setError] = useState('')
+     
 
       const navigate = useNavigate()
       const { googleLogIn, setUser, emailRegister, user, updateUserProfile } = useContext(AuthContext)
