@@ -9,6 +9,7 @@ import Register from "../Auth/Register/Register";
 import NewsDetails from "../Pages/NewsDetails/NewsDetails";
 import ResetPassword from "../Auth/ResetPassword/ResetPassword";
 import ForgetPassword from "../Auth/ForgetPassword/ForgetPassword";
+import PassResetLink from "../Auth/PassResetLink/PassResetLink";
 const router = createBrowserRouter ([
       {
             path: '/',
@@ -62,6 +63,10 @@ const router = createBrowserRouter ([
                   {
                         path:'forgetpassword',
                         element: <ForgetPassword></ForgetPassword>
+                  },
+                  {
+                        path:'passwordreset',
+                        element: <PassResetLink></PassResetLink>
                   }
             ]
       }
