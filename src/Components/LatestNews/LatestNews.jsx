@@ -1,15 +1,31 @@
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import { FaHandPointRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const LatestNews = () => {
+      const [news , setNews] = useState([])
+      
+      useEffect(()=>{
+            fetch('https://openapi.programming-hero.com/api/news/category/08')
+            .then(res=> res.json())
+            .then(data=> setNews(data.data))
+            
+      },[])
+      
+      const latestNews = [...news].filter(singleNews => singleNews.others_info.is_trending === true)
+      console.log(latestNews);
+      
+       
       return (
             <div className=" container mx-auto mt-3">
                  <div className=" flex items-center bg-blue-200 p-2">
-                   <span className=" bg-blue-600 text-white px-6 py-3">Latest</span> <Marquee 
+                   <span className=" bg-blue-600 text-white px-6 py-3">Trending</span> <Marquee 
                    pauseOnHover={true}>
                         <div className=" space-x-8 text-xl">
-                        <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nemo dignissimos assumenda doloremque tempora perspiciatis.</a>
-                        <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nemo dignissimos assumenda doloremque tempora perspiciatis.</a>
-                        <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nemo dignissimos assumenda doloremque tempora perspiciatis.</a>
+                             {
+                              latestNews.map(news=> <Link className="" to={`/newsdetails/${news._id}`} key={news._id}> <span className=" text-blue-600">#</span><span>{news.title}</span></Link>)
+                             }
                         </div>
                         </Marquee>
                   </div> 
