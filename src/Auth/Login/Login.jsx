@@ -10,7 +10,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 const Login = () => { 
       const {googleLogIn,setUser,siginInEmail,user} = useContext(AuthContext)
       const location = useLocation()
-      console.log(location);
+     
       const navigate = useNavigate()
       
       const handleGoogleLogin = () => {
@@ -70,7 +70,7 @@ const Login = () => {
                                     </label>
                                     <button  className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Login</button>
                               </form>
-                              <p className=" text-sm mt-3">Dont’t Have An Account ? <Link className=" text-blue-600 font-semibold" to={'/register'}> Register</Link></p>
+                              <p className=" text-sm mt-3">Dont’t Have An Account ? <Link className=" text-blue-600 font-semibold" to={'/register'} state={location.state}> Register</Link></p>
                               <div className=" divider">OR</div>
                               <div className=" flex gap-3 text-3xl items-center justify-center">
                                     <FaGoogle onClick={handleGoogleLogin}  className=" text-red-600 cursor-pointer"></FaGoogle>
