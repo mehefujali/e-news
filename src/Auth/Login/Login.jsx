@@ -73,7 +73,7 @@ const Login = () => {
                                           name="password"
                                           placeholder=" Enter your Password"  type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
-                                    <Link to={'/updatepassword'}>Forget password ?</Link>
+                                    <Link to={'/forgetpassword'}>Forget password ?</Link>
                                     <button  className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Login</button>
                               </form>
                               <p className=" text-sm mt-3">Dont’t Have An Account ? <Link className=" text-blue-600 font-semibold" to={'/register'} state={location.state}> Register</Link></p>

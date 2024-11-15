@@ -1,6 +1,7 @@
 {
   "hosting": [
     {
+      "target":"e-news",
       "public": "dist",
       "ignore": [
         "firebase.json",

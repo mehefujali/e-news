@@ -8,6 +8,7 @@ import Login from "../Auth/Login/Login";
 import Register from "../Auth/Register/Register";
 import NewsDetails from "../Pages/NewsDetails/NewsDetails";
 import ResetPassword from "../Auth/ResetPassword/ResetPassword";
+import ForgetPassword from "../Auth/ForgetPassword/ForgetPassword";
 const router = createBrowserRouter ([
       {
             path: '/',
@@ -57,6 +58,10 @@ const router = createBrowserRouter ([
                   {
                         path:'updatepassword',
                         element:<ResetPassword></ResetPassword>
+                  },
+                  {
+                        path:'forgetpassword',
+                        element: <ForgetPassword></ForgetPassword>
                   }
             ]
       }

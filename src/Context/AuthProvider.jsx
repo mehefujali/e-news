@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updatePassword, updateProfile} from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updatePassword, updateProfile} from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
@@ -29,6 +29,9 @@ const AuthProvider = ({children}) => {
   const updateUserPass = (pass) => {
     return updatePassword(auth.currentUser,pass)
   }
+  const forgetPassword = (email) =>{
+    return sendPasswordResetEmail(auth,email)
+  }
   useEffect(()=>{
      const unSubscrbe = onAuthStateChanged(auth,(curentUser)=>{
             setUser(curentUser)
@@ -56,7 +59,8 @@ const AuthProvider = ({children}) => {
       loading,
       setLoading,
       updateUserProfile,
-      updateUserPass
+      updateUserPass,
+      forgetPassword,
      }
 
       return (
