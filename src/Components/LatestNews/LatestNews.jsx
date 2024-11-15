@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import { FaHandPointRight } from "react-icons/fa6";
+
 import { Link } from "react-router-dom";
 
 const LatestNews = () => {
@@ -14,7 +14,7 @@ const LatestNews = () => {
       },[])
       
       const latestNews = [...news].filter(singleNews => singleNews.others_info.is_trending === true)
-      console.log(latestNews);
+      
       
        
       return (
