@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "e-news-c1801"
-  }
+  },
+  "targets": {
+    "e-news-c1801": {
+      "hosting": {
+        "e-news": [
+          "e-news"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
