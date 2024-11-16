@@ -61,41 +61,41 @@ const Register = () => {
             <div className="bg-blue-100" >
                  
                   <Nav></Nav>
-                  <div className=" container mx-auto h-[calc(100vh-68px)]  flex justify-center items-center">
-                        <div className=" max-w-lg mx-auto p-10 bg-white rounded shadow-md">
-                              <h1 className=" text-2xl md:text-4xl font-bold">Register your account</h1>
+                  <div className=" container mx-auto min-h-[calc(100vh-52px)] md:min-h-[calc(100vh-68px)]  flex justify-center items-center">
+                        <div className=" w-11/12  md:max-w-lg mx-auto p-10 bg-white rounded shadow-md">
+                              <h1 className=" text-lg md:text-3xl font-bold">Register your account</h1>
                               <div className=" divider"></div>
                               <form onSubmit={handleEmailRegister} className=" w-full flex flex-col gap-3">
                                     <label htmlFor="">
-                                          <p className=" font-semibold">Name*</p>
+                                          <p className=" font-semibold text-xs md:text-md">Name*</p>
                                           <input
                                                 required
                                                 name="name"
-                                                placeholder=" Enter your name" type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                                placeholder="  Enter your name" type="text " className="input input-sm md:input-md text-xs md:text-md w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
                                     <label htmlFor="">
 
-                                          <p className=" font-semibold">Photo url</p>
+                                          <p className=" text-xs md:text-md font-semibold">Photo url</p>
                                           <input
                                                 name="photourl"
-                                                placeholder=" Enter your photo url" type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                                placeholder="  Enter your photo url" type="text " className="input input-sm md:input-md text-xs md:text-md w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
                                     <label htmlFor="">
-                                          <p className=" font-semibold">Email address*</p>
+                                          <p className=" text-xs md:text-md font-semibold">Email address*</p>
                                           <input
                                                 name="email"
-                                                placeholder=" Enter your email address" type="email" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                                placeholder="  Enter your email address" type="email" className="input input-sm text-xs md:text-md md:input-md w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
                                     <label htmlFor="">
-                                          <p className=" font-semibold">Password*</p>
+                                          <p className=" font-semibold text-xs md:text-md">Password*</p>
                                           <input
                                                 name="password"
-                                                placeholder=" Enter your Password" type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                                placeholder=" Enter your Password" type="password" className="text-xs md:text-md input-sm md:input-md input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
-                                    <button className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Create account</button>
+                                    <button className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full btn-sm md:btn-md text-xs md:text-md   rounded">Create account</button>
                               </form>
-                              <p className=" text-sm mt-3">Already have An Account ? <Link className=" text-blue-600 font-semibold" to={'/login'}>Login</Link></p>
-                              <div className=" divider">OR</div>
+                              <p className=" text-xs md:text-md mt-3 ">Already have An Account ? <Link className=" text-blue-600 font-semibold" to={'/login'}>Login</Link></p>
+                              <div className=" divider text-xs md:text-md">OR</div>
                               <div className=" flex gap-3 text-3xl items-center justify-center">
                                     <FaGoogle onClick={handleGoogleLogin} className=" text-red-600 cursor-pointer"></FaGoogle>
                                     <FaFacebook className=" text-blue-600 cursor-pointer"></FaFacebook>

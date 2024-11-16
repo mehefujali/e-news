@@ -17,7 +17,7 @@ const Nav = () => {
                         <div className=" md:w-32">
 
                         </div>
-                        <ul id="navLinks" className=" text-sm md:text-md gap-6 flex items-center text-gray-500">
+                        <ul id="navLinks" className=" text-xs md:text-md gap-6 flex items-center text-gray-500">
                               <NavLink to={'/home'}>Home</NavLink>
                               <NavLink to={'/about'}>About</NavLink>
                               <NavLink to={'/career'}>Career</NavLink>

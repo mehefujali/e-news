@@ -56,7 +56,7 @@ const Login = () => {
             <div className="bg-blue-100" >
                    <Nav></Nav>
                    <div className=" container mx-auto h-[calc(100vh-68px)]  flex justify-center items-center">
-                        <div className=" w-11/12  mx-auto p-7 md:p-10 bg-white rounded shadow-md">
+                        <div className=" w-11/12 md:max-w-md  mx-auto p-7 md:p-10 bg-white rounded shadow-md">
                               <h1 className=" text-xl  text-center md:text-4xl font-bold">Login your account</h1>
                               <div className=" divider"></div>
                               <form onSubmit={handleEmailLogin} action="" className=" w-full flex flex-col gap-3">
