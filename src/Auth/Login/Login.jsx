@@ -56,28 +56,28 @@ const Login = () => {
             <div className="bg-blue-100" >
                    <Nav></Nav>
                    <div className=" container mx-auto h-[calc(100vh-68px)]  flex justify-center items-center">
-                        <div className=" max-w-lg mx-auto p-10 bg-white rounded shadow-md">
-                              <h1 className=" text-2xl md:text-4xl font-bold">Login your account</h1>
+                        <div className=" w-11/12  mx-auto p-7 md:p-10 bg-white rounded shadow-md">
+                              <h1 className=" text-xl  text-center md:text-4xl font-bold">Login your account</h1>
                               <div className=" divider"></div>
                               <form onSubmit={handleEmailLogin} action="" className=" w-full flex flex-col gap-3">
                                     <label htmlFor="">
                                           
-                                          <p className=" font-semibold">Email address</p>
+                                          <p className=" font-semibold text-xs md:text-md">Email address</p>
                                           <input 
                                           name="email"
-                                          placeholder=" Enter your email address"  type="text " className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                          placeholder=" Enter your email address"  type="text " className=" text-xs input-sm md:input-md md:text-md input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
                                     <label htmlFor="">
-                                          <p className=" font-semibold">Password</p>
+                                          <p className=" text-xs md:text-md font-semibold">Password</p>
                                           <input 
                                           name="password"
-                                          placeholder=" Enter your Password"  type="password" className="input w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
+                                          placeholder=" Enter your Password"  type="password" className="input input-sm md:input-md text-xs md:text-md w-full border-2 border-blue-500 focus:outline-none focus:border-blue-400 rounded" />
                                     </label>
-                                    <Link to={'/forgetpassword'}>Forget password ?</Link>
-                                    <button  className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full   rounded">Login</button>
+                                    <Link className="text-xs md:text-md" to={'/forgetpassword'}>Forget password ?</Link>
+                                    <button  className="btn mt-5 bg-blue-600 hover:text-blue-600 text-white w-full  btn-sm md:btn-md  rounded">Login</button>
                               </form>
-                              <p className=" text-sm mt-3">Dont’t Have An Account ? <Link className=" text-blue-600 font-semibold" to={'/register'} state={location.state}> Register</Link></p>
-                              <div className=" divider">OR</div>
+                              <p className=" text-xs md:text-sm mt-3">Dont’t Have An Account ? <Link className=" text-blue-600 font-semibold" to={'/register'} state={location.state}> Register</Link></p>
+                              <div className=" divider text-xs md:text-md">OR</div>
                               <div className=" flex gap-3 text-3xl items-center justify-center">
                                     <FaGoogle onClick={handleGoogleLogin}  className=" text-red-600 cursor-pointer"></FaGoogle>
                                     <FaFacebook className=" text-blue-600 cursor-pointer"></FaFacebook>

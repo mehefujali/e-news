@@ -24,7 +24,7 @@ const NewsDetails = () => {
 
       return (
             <PrivetRoute>
-                  <div className=" container mx-auto">
+                  <div className=" container mx-auto mb-6">
                         <ScrollRestoration></ScrollRestoration>
                         <Header></Header>
                         <Nav></Nav>
