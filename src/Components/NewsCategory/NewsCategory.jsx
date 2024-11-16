@@ -18,7 +18,7 @@ const NewsCategory = () => {
                         {
                               categories.map(category => <NavLink
                                     to={`/home/category/${category.category_id}`}
-                                    className="btn btn-xs lg:btn-md bg-blue-100"                                   
+                                    className="btn btn-sm lg:btn-md bg-blue-100"                                   
                         key={category.category_id}>{category.category_name}</NavLink>)
                         }
                   </div>

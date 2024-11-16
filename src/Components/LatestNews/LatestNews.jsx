@@ -19,7 +19,7 @@ const LatestNews = () => {
        
       return (
             <div className=" container mx-auto mt-3">
-                 <div className=" flex items-center bg-blue-200  w-full">
+                 <div className=" flex items-center bg-blue-200  md:w-full">
                    <span className=" bg-blue-600 text-white px-3 py-1 md:px-6 md:py-3">Trending</span> <Marquee 
                    pauseOnHover={true}>
                         <div className=" space-x-8 text-sm md:text-xl">

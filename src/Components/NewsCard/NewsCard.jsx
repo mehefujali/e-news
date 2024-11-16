@@ -38,8 +38,8 @@ const NewsCard = ({ news }) => {
                                     <CiShare2 className=" font-bold cursor-pointer"></CiShare2>
                               </div>
                         </div>
-                        <div className=" mt-4 flex flex-col gap-2 p-4">
-                              <h1 className=" text-2xl font-bold">{title}</h1>
+                        <div className=" md:mt-4 flex flex-col gap-2 p-4">
+                              <h1 className=" text-md md:text-2xl font-bold">{title}</h1>
                               <img className=" w-full   object-contain" src={image_url} alt="" />
                               <p className=" max-h-36 text-gray-500  truncate whitespace-normal " >{details}..</p>
                               <Link to={`/newsdetails/${_id}`} className=" text-blue-600 font-bold">...Read more</Link>
