@@ -13,7 +13,7 @@ const News = () => {
                   <div className=" flex flex-col gap-7">
                       {
                         newsData.length<1? <div>
-                              
+                              <h1>NO CONTENT</h1>
                         </div>:newsData.data.map(news=> <NewsCard key={news._id} news={news}></NewsCard> )
                       }
                   </div>

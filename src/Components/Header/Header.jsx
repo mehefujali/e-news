@@ -12,11 +12,11 @@ const Header = () => {
           }, []); 
         
       return (
-            <div className=' container mx-auto'>
-                   <div className=' w-fit mx-auto text-center space-y-1'>
-                        <img className=' mx-auto' src={logo} alt="" />
-                        <p className=' text-gray-500 text-xl'>Journalism Without Fear or Favour</p>
-                        <p className=' font-semibold mt-5 text-gray-500 text-xl'>{time}</p>
+            <div className=' container mx-auto '>
+                   <div className=' w-11/12 md:w-full mx-auto text-center space-y-1'>
+                        <img className=' w-1/2 md:w-auto mx-auto' src={logo} alt="" />
+                        <p className=' text-gray-500 text-md md:text-xl'>Journalism Without Fear or Favour</p>
+                        <p className=' font-semibold mt-5 text-gray-500 text-md md:text-xl'>{time}</p>
                    </div>
             </div>
       );
