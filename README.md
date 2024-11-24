@@ -23,3 +23,4 @@ Welcome to **E-News** – your go-to source for the latest news and articles acr
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/your-username/e-news.git
+ 
